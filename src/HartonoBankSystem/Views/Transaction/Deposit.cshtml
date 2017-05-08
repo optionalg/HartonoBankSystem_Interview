@@ -1,0 +1,28 @@
+﻿@model HartonoBankSystem.ViewModels.Deposit
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using (Html.BeginForm())
+{
+    <div>
+        Account Number
+        <label>
+            @Model.AccountNumber
+        </label>
+    </div>
+    <div>
+        Account Balance
+        <label>
+            @Model.Balance
+        </label>
+    </div>
+    <div>
+        Deposit Amount
+        <input type="text" class="form-control" name="Amount" />
+    </div>
+    <div>
+        <input type="submit" value="Submit Deposit" />
+    </div>
+}

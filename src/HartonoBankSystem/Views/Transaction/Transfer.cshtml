@@ -1,0 +1,37 @@
+﻿@model HartonoBankSystem.ViewModels.Transfer
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using (Html.BeginForm())
+{
+    <div>
+        Account Number
+        <label>
+            @Model.AccountNumberFrom
+        </label>
+    </div>
+    <div>
+        Account Balance
+        <label>
+            @Model.Balance
+        </label>
+    </div>
+    <div>
+        Target Account
+        <select name="TargetAccountId" class="form-control" >
+            @foreach (var accountItem in ViewBag.TargetAccountList)
+            {
+                <option value="@accountItem.AccountID">@accountItem.AccountName (@accountItem.AccountNumber)</option>
+            }
+        </select>
+    </div>
+    <div>
+        Transfer Amount
+        <input type="text" class="form-control" name="Amount" />
+    </div>
+    <div>
+        <input type="submit" value="Submit Transfer" />
+    </div>
+}
